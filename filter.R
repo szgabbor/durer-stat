@@ -6,5 +6,3 @@ chooseTopOfCategory <- function(scores, category) {
     dplyr::arrange(desc(Összesen)) %>% 
     head(10)
 }
-
-View(chooseTopOfCategory(cdfk_pontok, "D"))
