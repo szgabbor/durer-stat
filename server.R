@@ -4,6 +4,14 @@ shinyServer(function(input, output) {
     })
     
     output$scores <- renderDataTable({
-        scores()    
+        scores() %>% 
+            filterForCategory(input$category)
+    })
+    
+    output$effect_of_age <- renderPlot({
+        scores() %>% 
+            filterForCategory(input$category) %>% 
+            agesDataForTeams() %>% 
+            plotEffectOfAge()
     })
 })
