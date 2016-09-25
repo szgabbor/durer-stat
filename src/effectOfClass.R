@@ -10,7 +10,8 @@ classDataForTeams <- function(scores_in_category) {
 } 
 
 plotEffectOfClass <- function(class_data) {
-    ggplot(class_data, aes(x = num_member_in_lower_class, y = total, group = num_member_in_lower_class)) +
+    class_data %>% 
+        ggplot(aes(x = num_member_in_lower_class, y = total, group = num_member_in_lower_class)) +
         geom_jitter(aes(col = num_member_in_lower_class), width = 0.2) +
         theme(legend.position = 'none')
 }
