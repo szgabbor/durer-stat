@@ -1,5 +1,5 @@
 shinyServer(function(input, output) {
-    scores <- eventReactive(input$show, {
+    scores <- reactive({
         fread(input$raw_data)
     })
     
